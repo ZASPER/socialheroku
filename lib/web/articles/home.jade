@@ -1,0 +1,33 @@
+extends ./layout.jade
+
+block vars
+  - var title = 'Home'
+
+block content
+
+  if user
+
+    h2.text-center Welcome Back, #{user.givenName}
+
+  else
+
+    h2.text-center Welcome to SocialHeroku!
+  hr
+  div.jumbotron
+
+        h1 Hello and Welcome to Social Heroku!
+
+        if user
+          p Welcome, #{user.fullName}
+          p
+            a.small(href="profile") Edit my profile
+          form(action='/logout', method='POST')
+            button.btn.btn-default(type="submit") Logout
+        else
+          p Social Heroku is a social app hosted on heroku, ready to get started?
+          p
+            a.btn.btn-primary(href="/login") Login now
+          p
+            span.small Don't have an account?
+            span &nbsp;
+            a.small(href="/register") Register now

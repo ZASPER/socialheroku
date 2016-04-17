@@ -1,0 +1,27 @@
+html
+  body
+    .row
+      .col-md-6
+        h2
+          | {{ contact.firstName }} {{ contact.lastName }}
+      .col-md-3
+      .col-md-2
+        a(href='#/')
+          button.btn.btn-default(style='margin-top:20px', ng-click='deleteContact(contact._id)') Delete
+      .col-md-1
+    .container(ng-hide='editMode')
+      div
+        p(ng-if='contact.email')
+          | email: 
+          a(ng-href='mailto:{{ contact.email }}', target='_blank') {{ contact.email }}
+        p(ng-if='contact.phone.mobile') phone (m): {{ contact.phone.mobile }} 
+        p(ng-if='contact.phone.work') phone (w): {{ contact.phone.work }} 
+        p(ng-if='contact.address')  address: {{ contact.address }} 
+        p(ng-if='contact.twitter')
+          | twitter: 
+          a(ng-href='https://twitter.com/{{ contact.twitter }}', target='_blank') @{{ contact.twitter }}
+        p
+          button.btn.btn-default(style='margin-top:20px', ng-click='toggleEdit()') Edit
+          a.btn.btn-default(style='margin-top:20px', href='#/') Back
+    // Contact form
+    div(ng-include='contactFormUrl')

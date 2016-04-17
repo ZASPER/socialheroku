@@ -1,0 +1,59 @@
+{
+  "name": "socialheroku",
+  "version": "1.0.0",
+  "description": "Social app hosted on Heroku.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "reset": "script/reset",
+    "benchmark": "script/benchmark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.heroku.com/socialherokutest.git"
+  },
+  "keywords": [
+    "social",
+    "hosted",
+    "heroku"
+  ],
+  "author": "Umbrella",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://git.heroku.com/socialherokutest.git/issues"
+  },
+  "homepage": "https://git.heroku.com/socialherokutest.git",
+  "dependencies": {
+    "amqplib": "^0.2.1",
+    "body-parser": "^1.15.0",
+    "compression": "^1.2.0",
+    "cookie-session": "^1.0.2",
+    "express": "^4.13.4",
+    "foreman": "^0.4.2",
+    "jackrabbit": "^2.3.0",
+    "jade": "^1.11.0",
+    "lodash": "^2.4.1",
+    "logfmt": "^1.1.2",
+    "mongoose": "~3.8.13",
+    "mongoose-cache": "git://github.com/hunterloftis/mongoose-cache",
+    "mongoose-timestamp": "^0.3.0",
+    "morgan": "^1.2.0",
+    "node-uuid": "^1.4.1",
+    "promise": "^5.0.0",
+    "serve-favicon": "~2.0.1",
+    "summarize": "^1.5.0",
+    "superagent": "^0.18.2",
+    "cookie-parser": "^1.4.1",
+    "csurf": "^1.8.3",
+    "express-stormpath": "^3.1.2",
+    "forms": "^1.1.4",
+    "pug": "^2.0.0-alpha3",
+    "xtend": "^4.0.1",
+    "mongodb": "^2.0.43",
+    "throng": "^1.0.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "iojs": "1.0.x"
+  }
+}

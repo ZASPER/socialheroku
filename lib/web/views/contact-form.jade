@@ -1,0 +1,31 @@
+html
+  body
+    .row(ng-hide='contact._id')
+      .col-md-6
+        h2 Create new contact
+    .container
+      div
+        p
+          label First Name (required)
+          input#name.form-control(type='text', ng-model='contact.firstName', required='')
+        p
+          label Last Name (required)
+          input#name.form-control(type='text', ng-model='contact.lastName', required='')
+        p
+          label Email (required)
+          input#name.form-control(type='text', ng-model='contact.email', required='')
+        p
+          label Phone (Mobile)
+          input#name.form-control(type='text', ng-model='contact.phone.mobile')
+        p
+          label Phone (Work)
+          input#name.form-control(type='text', ng-model='contact.phone.work')
+        p
+          label Address
+          input#name.form-control(type='text', ng-model='contact.address')
+        p
+          label Twitter Handle
+          input#name.form-control(type='text', ng-model='contact.twitter')
+        p
+          button.btn.btn-default(style='margin-top:20px', ng-click='saveContact(contact)') Save
+          button.btn.btn-default(style='margin-top:20px', ng-click='back()') Back

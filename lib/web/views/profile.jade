@@ -1,0 +1,107 @@
+extends ./layout.jade
+
+block vars
+  - var title = 'Profile'
+
+block content
+
+  h2 My Profile
+
+  hr
+
+  div.panel.panel-default
+    div.panel-heading.
+      Enter your profile information below, then click save to save your
+      changes.
+    div.panel-body
+
+    if errors
+        each error in errors
+          div.alert.alert-danger
+            span #{error.error}
+      if saved
+        div.alert.alert-success
+          span Your profile has been saved
+      form.form-horizontal(method='post', role='form')
+        input(name='_csrf', type='hidden', value=csrfToken)
+
+        div.form-group
+          label.control-label.col-sm-4 First Name
+          div.col-sm-4
+            input.form-control(
+              placeholder='Your first name',
+              required=true,
+              name='givenName',
+              type='text',
+              value=user.customData.givenName)
+
+        div.form-group
+          label.control-label.col-sm-4 Last Name
+          div.col-sm-4
+            input.form-control(placeholder='Your last name',
+              required=true,
+              name='surname',
+              type='text',
+              value=user.customData.surname)
+
+        div.form-group
+          label.control-label.col-sm-4 Street address
+          div.col-sm-4
+            input.form-control(placeholder='e.g. 123 Sunny Ave',
+              required=true,
+              name='streetAddress',
+              type='text',
+              value=user.customData.streetAddress)
+
+        div.form-group
+          label.control-label.col-sm-4 City
+          div.col-sm-4
+            input.form-control(placeholder='e.g. City',
+              required=true,
+              name='city',
+              type='text',
+              value=user.customData.city)
+
+        div.form-group
+          label.control-label.col-sm-4 County
+          div.col-sm-4
+            input.form-control(placeholder='e.g. CA',
+              required=true,
+              name='state',
+              type='text',
+              value=user.customData.state)
+
+        div.form-group
+          label.control-label.col-sm-4 ZIP
+          div.col-sm-4
+            input.form-control(placeholder='e.g. 94116',
+              required=true,
+              name='zip',
+              type='text',
+              value=user.customData.zip)
+
+        div.form-group
+          label.control-label.col-sm-4 Birthday
+          div.col-sm-4
+            input.form-control(placeholder='dd/mm/yy',
+              required=true,
+              name='birthday',
+              type='text',            
+              value=user.customData.birthday)
+
+        div.form-group
+          label.control-label.col-sm-4 Favorite Color
+          div.col-sm-4
+            input.form-control(placeholder='e.g. Green',
+            required=true,
+            name='favoriteColor',
+            type='text',            
+            value=user.customData.favoriteColor)
+
+        div.form-group
+          div.col-sm-offset-4.col-sm-4
+            button.btn.btn-primary(type='submit') Save
+
+          div.form-group
+          div.col-sm-offset-6.col-sm-4
+            a(href="/") Return to home page
